@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerês — Referência da Linguagem</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Fira+Code:wght@300;400;600&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <p class="header-eyebrow">linguagem de programação · v1.0 · versão inicial</p>
+        <h1><em>Minerês</em></h1>
+        <p class="tagline">A linguagem que roda igual cafezim: devagar, quentinha e sem frescura</p>
+        <div class="header-badges">
+            <span class="badge">☕ café-powered</span>
+            <span class="badge">🧀 100% pão de queijo</span>
+            <span class="badge">🌿 feito com lombeira</span>
+            <span class="badge">uai, sô</span>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ═══════════════════════════════════
+     ESTRUTURAS DE CONTROLE & FLUXO
+     ═══════════════════════════════════ -->
+        <div class="section-label"><span>☕ estruturas de controle &amp; fluxo</span></div>
+
+        <!-- CONDICIONAL -->
+        <div class="card">
+            <div class="card-head capim">
+                <span class="emoji">🤔</span> Condicional
+                <span class="card-sub">if / else / switch</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">if</span></td>
+                    <td><span class="kw">uai_se</span></td>
+                    <td>A dúvida clássica do mineiro antes de qualquer decisão</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">else</span></td>
+                    <td><span class="kw">uai_senão</span></td>
+                    <td>O outro lado da dúvida — também começa com "uai"</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">switch</span></td>
+                    <td><span class="kw">dependenu</span></td>
+                    <td>"Dependenu" — mineiro raramente dá resposta direta</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">case</span></td>
+                    <td><span class="kw">du_casu</span></td>
+                    <td>Cada caso do switch é um "du casu"</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">🧀</span><span>O mineiro nunca decide na hora. Um bom
+                    <strong>uai_se</strong> pode ficar em análise por dias — geralmente interrompido por um cafezim
+                    quente.</span></div>
+        </div>
+
+        <!-- REPETIÇÃO -->
+        <div class="card">
+            <div class="card-head queijo">
+                <span class="emoji">🔁</span> Repetição
+                <span class="card-sub">for / while / break / continue</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">for</span></td>
+                    <td><span class="kw">roda_esse_trem</span></td>
+                    <td>Manda o trem rodar — sem reclamar</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">while</span></td>
+                    <td><span class="kw">enquanto_tiver_trem</span></td>
+                    <td>Enquanto tiver "trem" (coisa) pra fazer, continua</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">break</span></td>
+                    <td><span class="kw">para_o_trem</span></td>
+                    <td>Manda o loop parar de uma vez</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">continue</span></td>
+                    <td><span class="kw">toca_o_trem</span></td>
+                    <td>Pula a iteração e toca o trem pra frente</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">☕</span><span><strong>enquanto_tiver_trem</strong> é perigoso — em
+                    Minas o "trem" nunca acaba. Sempre coloque um <strong>para_o_trem</strong> de segurança ou o código
+                    roda pro resto da vida.</span></div>
+        </div>
+
+        <!-- FUNÇÕES -->
+        <div class="card">
+            <div class="card-head cafe">
+                <span class="emoji">📜</span> Funções &amp; Retorno
+                <span class="card-sub">function / return</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">function / main</span></td>
+                    <td><span class="kw">bora cumpade ( )</span></td>
+                    <td>Declaração de função — convite pra começar o serviço</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">return</span></td>
+                    <td><span class="kw">ta bao</span></td>
+                    <td>"Tá bão" — retorna o valor com satisfação mineira</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">🌿</span><span>Todo programa Minerês começa com <strong>bora
+                        cumpade ( )</strong>. É um convite, não uma ordem — mas o compilador não aceita não.</span>
+            </div>
+        </div>
+
+        <!-- ENTRADA E SAÍDA -->
+        <div class="card">
+            <div class="card-head barro">
+                <span class="emoji">🗣️</span> Entrada &amp; Saída
+                <span class="card-sub">print / scan</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">print / saída</span></td>
+                    <td><span class="kw">oia_proce_ve</span></td>
+                    <td>"Olha pro cê ver" — mostra o resultado com orgulho</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">scan / entrada</span></td>
+                    <td><span class="kw">xove</span></td>
+                    <td>"Chove" — dados que entram de cima pra baixo</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">📢</span><span><strong>oia_proce_ve</strong> é o jeito mineiro de
+                    chamar atenção: "olha pro cê ver, isso aqui ó!" — saída com orgulho e personalidade.</span></div>
+        </div>
+
+        <!-- COMENTÁRIOS -->
+        <div class="card">
+            <div class="card-head roxo">
+                <span class="emoji">💬</span> Comentários
+                <span class="card-sub">linha única / multilinha</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">// linha única</span></td>
+                    <td><span class="kw sym">//</span></td>
+                    <td>Manteve o símbolo — mineiro é prático quando convém</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">/* multilinha */</span></td>
+                    <td><span class="kw">causo ... fim do causo</span></td>
+                    <td>Causo = história longa mineira. Termina quando bem entender</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">🎙️</span><span>Um <strong>causo</strong> em Minas pode durar
+                    horas. O comentário multilinha segue a mesma lógica — ninguém garante que vai ser curto.</span>
+            </div>
+        </div>
+
+
+        <!-- ═══════════════════════════════════
+     TIPOS, OPERADORES & SINTAXE
+     ═══════════════════════════════════ -->
+        <div class="section-label"><span>🧀 tipos, operadores &amp; sintaxe</span></div>
+
+        <!-- TIPOS -->
+        <div class="card">
+            <div class="card-head capim">
+                <span class="emoji">🏷️</span> Tipos de Dado
+                <span class="card-sub">int · float · string · bool · char</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Inspiração</th>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">int</span></td>
+                    <td><span class="kw">trem_di_numeru</span></td>
+                    <td>Um "trem" de número — inteiro, sem vírgula</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">float</span></td>
+                    <td><span class="kw">trem_cum_virgula</span></td>
+                    <td>Trem que tem vírgula no meio — número real</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">string</span></td>
+                    <td><span class="kw">trem_discrita</span></td>
+                    <td>"Trem descrito" — texto, o que é escrito</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">boolean</span></td>
+                    <td><span class="kw">trem_discolhe</span></td>
+                    <td>"Trem de escolha" — verdadeiro ou falso, só dois caminhos</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">char</span></td>
+                    <td><span class="kw">trosso</span></td>
+                    <td>"Trosso" (troço) — um pedacinho só, uma letinha</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- BLOCOS E SÍMBOLOS -->
+        <div class="card">
+            <div class="card-head queijo">
+                <span class="emoji">🧱</span> Blocos &amp; Símbolos
+                <span class="card-sub">{ } ( ) ; , " '</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td>Início de bloco</td>
+                    <td><span class="kw">simbora</span></td>
+                    <td>"Simbora" — começa o bloco com disposição</td>
+                </tr>
+                <tr>
+                    <td>Fim de bloco</td>
+                    <td><span class="kw">cabô</span></td>
+                    <td>"Cabou" — acabou, bloco encerrado</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">{ }</span></td>
+                    <td><span class="kw sym">{ }</span></td>
+                    <td>Chaves — mantidas</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">( )</span></td>
+                    <td><span class="kw sym">( )</span></td>
+                    <td>Parênteses — mantidos</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">" "</span></td>
+                    <td><span class="kw sym">" "</span></td>
+                    <td>Aspas duplas — string padrão</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">' '</span></td>
+                    <td><span class="kw sym">.' '.</span></td>
+                    <td>Char — envolto em pontinhos, pequenininho</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">;</span> fim de instrução</td>
+                    <td><span class="kw">uai</span></td>
+                    <td>Toda instrução termina com "uai" — o ponto e vírgula mineiro</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">,</span> separador</td>
+                    <td><span class="kw sym">,</span></td>
+                    <td>Vírgula — mantida</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">🍞</span><span><strong>simbora</strong> abre e
+                    <strong>cabô</strong> fecha. Um bloco sem <strong>cabô</strong> é erro grave — igual sair de casa
+                    sem falar tchau pra vó.</span></div>
+        </div>
+
+        <!-- OPERADORES RELACIONAIS -->
+        <div class="card">
+            <div class="card-head vermelho">
+                <span class="emoji">⚖️</span> Operadores Relacionais
+                <span class="card-sub">== != = &lt; &gt; &lt;= &gt;=</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Raciocínio</th>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">==</span> igualdade</td>
+                    <td><span class="kw">mema_coisa</span></td>
+                    <td>"Mesma coisa" — são iguais, ponto</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">≠ / !=</span> diferente</td>
+                    <td><span class="kw">neh_nada</span></td>
+                    <td>"Né nada" — não é coisa nenhuma igual</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">=</span> atribuição</td>
+                    <td><span class="kw">fica_assim_entao</span></td>
+                    <td>"Fica assim então" — a variável assume o valor</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">&lt;</span> e <span class="kw sym">&gt;</span></td>
+                    <td><span class="kw sym">&lt; &nbsp; &gt;</span></td>
+                    <td>Menor e maior — mantidos</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">&lt;=</span> e <span class="kw sym">&gt;=</span></td>
+                    <td><span class="kw sym">&lt;= &nbsp; =&gt;</span></td>
+                    <td>Menor/maior ou igual — mantidos</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- OPERADORES LÓGICOS -->
+        <div class="card">
+            <div class="card-head escuro">
+                <span class="emoji">🧠</span> Operadores Lógicos
+                <span class="card-sub">or · and · not · xor</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Raciocínio</th>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">or</span></td>
+                    <td><span class="kw">quarque_um</span></td>
+                    <td>"Qualquer um" — basta um dos dois ser verdade</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">and</span></td>
+                    <td><span class="kw">tamem</span></td>
+                    <td>"Também" — os dois têm que ser verdade</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">not</span></td>
+                    <td><span class="kw">vam_marca</span></td>
+                    <td>"Vam marcá" — nega com determinação</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">xor</span></td>
+                    <td><span class="kw">um_o_oto</span></td>
+                    <td>"Um ou o outro" — exclusivo, só um dos dois</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- OPERADORES ARITMÉTICOS -->
+        <div class="card">
+            <div class="card-head barro">
+                <span class="emoji">➗</span> Operadores Aritméticos
+                <span class="card-sub">+ - * / % //</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Original</th>
+                    <th>Minerês</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">+</span></td>
+                    <td><span class="kw sym">+'</span></td>
+                    <td>Adição com o apostrofo mineiro</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">-</span></td>
+                    <td><span class="kw sym">-'</span></td>
+                    <td>Subtração — também com apostrofo</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">*</span></td>
+                    <td><span class="kw">veiz</span></td>
+                    <td>"Veiz" (vez) — multiplicar é fazer várias vezes</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">/</span></td>
+                    <td><span class="kw">sob</span></td>
+                    <td>"Sob" (sobre) — divisão por cima</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">%</span> módulo</td>
+                    <td><span class="kw sym">%</span></td>
+                    <td>Módulo — mantido</td>
+                </tr>
+                <tr>
+                    <td><span class="kw sym">//</span> div. inteira</td>
+                    <td><span class="kw sym">/</span></td>
+                    <td>Divisão inteira — barra simples</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LITERAIS NUMÉRICOS -->
+        <div class="card">
+            <div class="card-head cafe">
+                <span class="emoji">🔢</span> Bases Numéricas
+                <span class="card-sub">real · decimal · octal · hex</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Exemplos</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td>Real</td>
+                    <td><span class="kw sym">3.14 &nbsp;|&nbsp; .92 &nbsp;|&nbsp; 0.33</span></td>
+                    <td>Número com casa decimal</td>
+                </tr>
+                <tr>
+                    <td>Decimal</td>
+                    <td><span class="kw sym">0 &nbsp;|&nbsp; 10 &nbsp;|&nbsp; 32</span></td>
+                    <td>Inteiros comuns — o feijão do dia a dia</td>
+                </tr>
+                <tr>
+                    <td>Octal</td>
+                    <td><span class="kw sym">01 &nbsp;|&nbsp; 07 &nbsp;|&nbsp; 017</span></td>
+                    <td>Prefixo <code>0</code> — base 8</td>
+                </tr>
+                <tr>
+                    <td>Hexadecimal</td>
+                    <td><span class="kw sym">0x10F</span></td>
+                    <td>Prefixo <code>0x</code> — base 16</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- STRINGS -->
+        <div class="card">
+            <div class="card-head capim">
+                <span class="emoji">💬</span> Strings (trem_discrita)
+                <span class="card-sub">literais de texto</span>
+            </div>
+            <table>
+                <tr>
+                    <th>Forma</th>
+                    <th>Exemplo</th>
+                    <th>Uso</th>
+                </tr>
+                <tr>
+                    <td>Texto simples</td>
+                    <td><span class="kw sym">"Uai, sô!"</span></td>
+                    <td>Texto entre aspas duplas</td>
+                </tr>
+                <tr>
+                    <td>Char único</td>
+                    <td><span class="kw sym">.'M'.</span></td>
+                    <td>Uma letinha (<strong>trosso</strong>) entre <code>.'  '.</code></td>
+                </tr>
+                <tr>
+                    <td>Escape</td>
+                    <td><span class="kw sym">\n &nbsp; \t &nbsp; \"</span></td>
+                    <td>Quebra de linha, tab e aspas escapadas</td>
+                </tr>
+            </table>
+            <div class="lore"><span class="lore-icon">🗨️</span><span><strong>trem_discrita</strong> guarda qualquer
+                    palavra, frase ou receita de pão de queijo. O <strong>trosso</strong> é pra quando só cabe uma
+                    letinha.</span></div>
+        </div>
+
+
+        <!-- ═══════════════════════════════════
+     EXEMPLO DE CÓDIGO
+     ═══════════════════════════════════ -->
+        <div class="section-label"><span>💻 exemplo de código</span></div>
+
+        <div class="card full">
+            <div class="card-head cafe">
+                <span class="emoji">💻</span> Exemplo — Padaria do Zé em Minerês
+                <span class="card-sub">padaria.minrs</span>
+            </div>
+            <div class="code-wrap">
+                <div class="code-top">
+                    <div class="dot r"></div>
+                    <div class="dot y"></div>
+                    <div class="dot g"></div>
+                    <span class="code-filename">padaria.minrs</span>
+                </div>
+                <pre>
+<span class="cc">// Programa de controle da Padaria do Zé Mineiro</span>
+
+<span class="cc">causo
+  Sistema feito numa tarde de domingo,
+  com cafezim passado na hora e pão de queijo ainda quente.
+  Qualquer bug é culpa da lombeira pós-almoço.
+fim do causo</span>
+
+<span class="cc">// Função que calcula o troco</span>
+<span class="cf">bora cumpade</span> calculaTroco(<span class="ct">trem_cum_virgula</span> pagou, <span class="ct">trem_cum_virgula</span> total)
+<span class="ck">simbora</span>
+    <span class="cf">ta bao</span> pagou -' total <span class="ck">uai</span>
+<span class="ck">cabô</span>
+
+<span class="cc">// Programa principal</span>
+<span class="cf">bora cumpade</span> principal()
+<span class="ck">simbora</span>
+    <span class="ct">trem_di_numeru</span>  paozinhos  <span class="cop">fica_assim_entao</span> <span class="cn">0</span>               <span class="ck">uai</span>
+    <span class="ct">trem_cum_virgula</span> preco     <span class="cop">fica_assim_entao</span> <span class="cn">2.50</span>            <span class="ck">uai</span>
+    <span class="ct">trem_discrita</span>    nome      <span class="cop">fica_assim_entao</span> <span class="cs">"Padaria do Zé"</span> <span class="ck">uai</span>
+
+    <span class="cf">oia_proce_ve</span>(<span class="cs">"Bem-vindo à {nome}, sô!"</span>) <span class="ck">uai</span>
+
+    <span class="cc">// Enchendo o forno de pão</span>
+    <span class="ck">roda_esse_trem</span> (paozinhos &lt; <span class="cn">5</span>)
+    <span class="ck">simbora</span>
+        paozinhos <span class="cop">fica_assim_entao</span> paozinhos +' <span class="cn">1</span> <span class="ck">uai</span>
+        <span class="cf">oia_proce_ve</span>(<span class="cs">"🧀 Pão {paozinhos} saindo do forno, uai!"</span>) <span class="ck">uai</span>
+    <span class="ck">cabô</span>
+
+    <span class="ct">trem_cum_virgula</span> total <span class="cop">fica_assim_entao</span> paozinhos <span class="cop">veiz</span> preco <span class="ck">uai</span>
+
+    <span class="cc">// Verificando se tá caro demais</span>
+    <span class="ck">uai_se</span> (total > <span class="cn">10.0</span>)
+    <span class="ck">simbora</span>
+        <span class="cf">oia_proce_ve</span>(<span class="cs">"Nó! Gastou {total} — tá caro dimais, sô!"</span>) <span class="ck">uai</span>
+    <span class="ck">cabô</span>
+    <span class="ck">uai_senão</span>
+    <span class="ck">simbora</span>
+        <span class="cf">oia_proce_ve</span>(<span class="cs">"Bão demais! Só {total} reais."</span>) <span class="ck">uai</span>
+    <span class="ck">cabô</span>
+
+    <span class="cc">// Calculando troco</span>
+    <span class="ct">trem_cum_virgula</span> pagou <span class="cop">fica_assim_entao</span> <span class="cn">20.0</span> <span class="ck">uai</span>
+    <span class="ct">trem_cum_virgula</span> troco <span class="cop">fica_assim_entao</span> calculaTroco(pagou, total) <span class="ck">uai</span>
+    <span class="cf">oia_proce_ve</span>(<span class="cs">"Seu troco: {troco} — pode pegar!"</span>) <span class="ck">uai</span>
+
+    <span class="cc">// Classificando o cliente</span>
+    <span class="ck">dependenu</span> (paozinhos)
+    <span class="ck">simbora</span>
+        <span class="ck">du_casu</span> <span class="cn">1</span>: <span class="cf">oia_proce_ve</span>(<span class="cs">"Só um pãozim? Tá de brincação, sô?"</span>)   <span class="ck">uai</span> <span class="ck">para_o_trem</span> <span class="ck">uai</span>
+        <span class="ck">du_casu</span> <span class="cn">5</span>: <span class="cf">oia_proce_ve</span>(<span class="cs">"Issu aí! Comprou o lote! É nóis! 🎉"</span>) <span class="ck">uai</span> <span class="ck">para_o_trem</span> <span class="ck">uai</span>
+    <span class="ck">cabô</span>
+
+    <span class="cc">// Loop com saída antecipada</span>
+    <span class="ct">trem_di_numeru</span> i <span class="cop">fica_assim_entao</span> <span class="cn">0</span> <span class="ck">uai</span>
+    <span class="ck">enquanto_tiver_trem</span> (i &lt; <span class="cn">10</span>)
+    <span class="ck">simbora</span>
+        <span class="ck">uai_se</span> (i <span class="cop">mema_coisa</span> <span class="cn">3</span>) <span class="ck">simbora</span> <span class="ck">toca_o_trem</span> <span class="ck">uai</span> <span class="ck">cabô</span>
+        <span class="cf">oia_proce_ve</span>(<span class="cs">"Rodada {i}"</span>) <span class="ck">uai</span>
+        i <span class="cop">fica_assim_entao</span> i +' <span class="cn">1</span> <span class="ck">uai</span>
+    <span class="ck">cabô</span>
+
+    <span class="cf">ta bao</span> <span class="cn">0</span> <span class="ck">uai</span>
+<span class="ck">cabô</span>
+</pre>
+            </div>
+            <div class="lore"><span class="lore-icon">🧀</span><span>Em Minerês, todo programa termina com <strong>ta
+                        bao</strong> — porque quando o mineiro fala "tá bão", o assunto foi encerrado com dignidade e
+                    satisfação.</span></div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>Minerês</strong> · v1.0 versão inicial · Feito com ☕ cafezim · 🧀 pão de queijo · 🌿 e muita lombeira
+            ·
+            Minas Gerais, Brasil</p>
+        <p style="margin-top:0.4rem;opacity:0.4">uai, sô — que linguagem bão dimais essa</p>
+    </footer>
+
+</body>
+
+</html>
