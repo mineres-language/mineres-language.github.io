@@ -198,12 +198,12 @@
         <div class="section-label"><span>🧀 tipos, operadores &amp; sintaxe</span></div>
 
         <!-- TIPOS -->
-        <div class="card">
+        <div class="card" style="display:flex; flex-direction:column;">
             <div class="card-head capim">
                 <span class="emoji">🏷️</span> Tipos de Dado
                 <span class="card-sub">int · float · string · bool · char</span>
             </div>
-            <table>
+            <table style="flex:1;">
                 <tr>
                     <th>Original</th>
                     <th>Minerês</th>
@@ -232,18 +232,30 @@
                 <tr>
                     <td><span class="kw orig">char</span></td>
                     <td><span class="kw">trosso</span></td>
-                    <td>"Trosso" (troço) — um pedacinho só, uma letinha</td>
+                    <td>"Trosso" (troço) — um pedacinho só, uma letrinha</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">true</span></td>
+                    <td><span class="kw">eh</span></td>
+                    <td>Valor verdadeiro</td>
+                </tr>
+                <tr>
+                    <td><span class="kw orig">false</span></td>
+                    <td><span class="kw">num_eh</span></td>
+                    <td>Valor falso</td>
                 </tr>
             </table>
+            <div class="lore"><span class="lore-icon">🚂</span><span>O mineiro não
+                    complica — se é uma coisa, é um <strong>trem</strong>.</span></div>
         </div>
 
         <!-- BLOCOS E SÍMBOLOS -->
-        <div class="card">
+        <div class="card" style="display:flex; flex-direction:column;">
             <div class="card-head queijo">
                 <span class="emoji">🧱</span> Blocos &amp; Símbolos
                 <span class="card-sub">{ } ( ) ; , " '</span>
             </div>
-            <table>
+            <table style="flex:1;">
                 <tr>
                     <th>Original</th>
                     <th>Minerês</th>
@@ -256,7 +268,7 @@
                 </tr>
                 <tr>
                     <td>Fim de bloco</td>
-                    <td><span class="kw">cabô</span></td>
+                    <td><span class="kw">cabo</span></td>
                     <td>"Cabou" — acabou, bloco encerrado</td>
                 </tr>
                 <tr>
@@ -276,13 +288,13 @@
                 </tr>
                 <tr>
                     <td><span class="kw sym">' '</span></td>
-                    <td><span class="kw sym">.' '.</span></td>
-                    <td>Char — envolto em pontinhos, pequenininho</td>
+                    <td><span class="kw sym">' '</span></td>
+                    <td>Char — pequenininho</td>
                 </tr>
                 <tr>
                     <td><span class="kw sym">;</span></td>
                     <td><span class="kw">uai</span></td>
-                    <td>Fim de instrução — toda instrução termina com "uai" o ponto e vírgula mineiro</td>
+                    <td>Fim de instrução — toda instrução termina com "uai", o ponto e vírgula mineiro</td>
                 </tr>
                 <tr>
                     <td><span class="kw sym">,</span></td>
@@ -291,7 +303,7 @@
                 </tr>
             </table>
             <div class="lore"><span class="lore-icon">🍞</span><span><strong>simbora</strong> abre e
-                    <strong>cabô</strong> fecha. Um bloco sem <strong>cabô</strong> é erro grave — igual sair de casa
+                    <strong>cabo</strong> fecha. Um bloco sem <strong>cabo</strong> é erro grave — igual sair de casa
                     sem falar tchau pra vó.</span></div>
         </div>
 
@@ -329,7 +341,7 @@
                 </tr>
                 <tr>
                     <td><span class="kw sym">&lt;=</span> e <span class="kw sym">&gt;=</span></td>
-                    <td><span class="kw sym">&lt;= &nbsp; =&gt;</span></td>
+                    <td><span class="kw sym">&lt;= &nbsp; &gt;=</span></td>
                     <td>Menor/maior ou igual — mantidos</td>
                 </tr>
             </table>
@@ -384,13 +396,13 @@
                 </tr>
                 <tr>
                     <td><span class="kw sym">+</span></td>
-                    <td><span class="kw sym">+'</span></td>
-                    <td>Adição com o apostrofo mineiro</td>
+                    <td><span class="kw sym">+</span></td>
+                    <td>Adição</td>
                 </tr>
                 <tr>
                     <td><span class="kw sym">-</span></td>
-                    <td><span class="kw sym">-'</span></td>
-                    <td>Subtração — também com apostrofo</td>
+                    <td><span class="kw sym">-</span></td>
+                    <td>Subtração</td>
                 </tr>
                 <tr>
                     <td><span class="kw sym">*</span></td>
@@ -403,12 +415,12 @@
                     <td>"Sob" (sobre) — divisão por cima</td>
                 </tr>
                 <tr>
-                    <td><span class="kw sym">%</span> módulo</td>
+                    <td><span class="kw sym">%</span></td>
                     <td><span class="kw sym">%</span></td>
                     <td>Módulo — mantido</td>
                 </tr>
                 <tr>
-                    <td><span class="kw sym">//</span> div. inteira</td>
+                    <td><span class="kw sym">//</span></td>
                     <td><span class="kw sym">/</span></td>
                     <td>Divisão inteira — barra simples</td>
                 </tr>
@@ -469,8 +481,8 @@
                 </tr>
                 <tr>
                     <td>Char único</td>
-                    <td><span class="kw sym">.'M'.</span></td>
-                    <td>Uma letinha (<strong>trosso</strong>) entre <code>.'  '.</code></td>
+                    <td><span class="kw sym">'M'</span></td>
+                    <td>Uma letinha (<strong>trosso</strong>) entre <code>'  '</code></td>
                 </tr>
                 <tr>
                     <td>Escape</td>
@@ -551,87 +563,30 @@
 
         <div class="card full">
             <div class="card-head cafe">
-                <span class="emoji">💻</span> Exemplo — Padaria do Zé em Minerês
-                <span class="card-sub">padaria.uai</span>
+                <span class="emoji">💻</span> Exemplo — Hello World em Minerês
+                <span class="card-sub">ola_mundo.uai</span>
             </div>
             <div class="code-wrap">
                 <div class="code-top">
                     <div class="dot r"></div>
                     <div class="dot y"></div>
                     <div class="dot g"></div>
-                    <span class="code-filename">padaria.uai</span>
+                    <span class="code-filename">ola_mundo.uai</span>
                 </div>
                 <pre>
-<span class="cc">// Programa de controle da Padaria do Zé Mineiro</span>
+<span class="cc">// Meu primeiro programa em Minerês, uai!</span>
 
-<span class="cc">causo
-  Sistema feito numa tarde de domingo,
-  com cafezim passado na hora e pão de queijo ainda quente.
-  Qualquer bug é culpa da lombeira pós-almoço.
-fim do causo</span>
-
-<span class="cc">// Função que calcula o troco</span>
-<span class="cf">bora_cumpade</span> calculaTroco(<span class="ct">trem_cum_virgula</span> pagou, <span class="ct">trem_cum_virgula</span> total)
-<span class="ck">simbora</span>
-    <span class="cf">ta_bao</span> pagou -' total <span class="ck">uai</span>
-<span class="ck">cabô</span>
-
-<span class="cc">// Programa principal</span>
 <span class="cf">bora_cumpade</span> principal()
 <span class="ck">simbora</span>
-    <span class="ct">trem_di_numeru</span>  paozinhos  <span class="cop">fica_assim_entao</span> <span class="cn">0</span>               <span class="ck">uai</span>
-    <span class="ct">trem_cum_virgula</span> preco     <span class="cop">fica_assim_entao</span> <span class="cn">2.50</span>            <span class="ck">uai</span>
-    <span class="ct">trem_discrita</span>    nome      <span class="cop">fica_assim_entao</span> <span class="cs">"Padaria do Zé"</span> <span class="ck">uai</span>
-
-    <span class="cf">oia_proce_ve</span>(<span class="cs">"Bem-vindo à {nome}, sô!"</span>) <span class="ck">uai</span>
-
-    <span class="cc">// Enchendo o forno de pão</span>
-    <span class="ck">roda_esse_trem</span> (paozinhos &lt; <span class="cn">5</span>)
-    <span class="ck">simbora</span>
-        paozinhos <span class="cop">fica_assim_entao</span> paozinhos +' <span class="cn">1</span> <span class="ck">uai</span>
-        <span class="cf">oia_proce_ve</span>(<span class="cs">"🧀 Pão {paozinhos} saindo do forno, uai!"</span>) <span class="ck">uai</span>
-    <span class="ck">cabô</span>
-
-    <span class="ct">trem_cum_virgula</span> total <span class="cop">fica_assim_entao</span> paozinhos <span class="cop">veiz</span> preco <span class="ck">uai</span>
-
-    <span class="cc">// Verificando se tá caro demais</span>
-    <span class="ck">uai_se</span> (total > <span class="cn">10.0</span>)
-    <span class="ck">simbora</span>
-        <span class="cf">oia_proce_ve</span>(<span class="cs">"Nó! Gastou {total} — tá caro dimais, sô!"</span>) <span class="ck">uai</span>
-    <span class="ck">cabô</span>
-    <span class="ck">uai_senão</span>
-    <span class="ck">simbora</span>
-        <span class="cf">oia_proce_ve</span>(<span class="cs">"Bão demais! Só {total} reais."</span>) <span class="ck">uai</span>
-    <span class="ck">cabô</span>
-
-    <span class="cc">// Calculando troco</span>
-    <span class="ct">trem_cum_virgula</span> pagou <span class="cop">fica_assim_entao</span> <span class="cn">20.0</span> <span class="ck">uai</span>
-    <span class="ct">trem_cum_virgula</span> troco <span class="cop">fica_assim_entao</span> calculaTroco(pagou, total) <span class="ck">uai</span>
-    <span class="cf">oia_proce_ve</span>(<span class="cs">"Seu troco: {troco} — pode pegar!"</span>) <span class="ck">uai</span>
-
-    <span class="cc">// Classificando o cliente</span>
-    <span class="ck">dependenu</span> (paozinhos)
-    <span class="ck">simbora</span>
-        <span class="ck">du_casu</span> <span class="cn">1</span>: <span class="cf">oia_proce_ve</span>(<span class="cs">"Só um pãozim? Tá de brincação, sô?"</span>)   <span class="ck">uai</span> <span class="ck">para_o_trem</span> <span class="ck">uai</span>
-        <span class="ck">du_casu</span> <span class="cn">5</span>: <span class="cf">oia_proce_ve</span>(<span class="cs">"Issu aí! Comprou o lote! É nóis! 🎉"</span>) <span class="ck">uai</span> <span class="ck">para_o_trem</span> <span class="ck">uai</span>
-    <span class="ck">cabô</span>
-
-    <span class="cc">// Loop com saída antecipada</span>
-    <span class="ct">trem_di_numeru</span> i <span class="cop">fica_assim_entao</span> <span class="cn">0</span> <span class="ck">uai</span>
-    <span class="ck">enquanto_tiver_trem</span> (i &lt; <span class="cn">10</span>)
-    <span class="ck">simbora</span>
-        <span class="ck">uai_se</span> (i <span class="cop">mema_coisa</span> <span class="cn">3</span>) <span class="ck">simbora</span> <span class="ck">toca_o_trem</span> <span class="ck">uai</span> <span class="ck">cabô</span>
-        <span class="cf">oia_proce_ve</span>(<span class="cs">"Rodada {i}"</span>) <span class="ck">uai</span>
-        i <span class="cop">fica_assim_entao</span> i +' <span class="cn">1</span> <span class="ck">uai</span>
-    <span class="ck">cabô</span>
-
+    <span class="ct">trem_discrita</span> mensagem <span class="cop">fica_assim_entao</span> <span class="cs">"Uai, mundo!\n"</span> <span class="ck">uai</span>
+    <span class="cf">oia_proce_ve</span>(mensagem) <span class="ck">uai</span>
     <span class="cf">ta_bao</span> <span class="cn">0</span> <span class="ck">uai</span>
-<span class="ck">cabô</span>
+<span class="ck">cabo</span>
 </pre>
             </div>
-            <div class="lore"><span class="lore-icon">🧀</span><span>Em Minerês, todo programa termina com <strong>ta
-                        bao</strong> — porque quando o mineiro fala "tá bão", o assunto foi encerrado com dignidade e
-                    satisfação.</span></div>
+            <div class="lore"><span class="lore-icon">🧀</span><span>Todo programa Minerês começa com
+                    <strong>bora_cumpade</strong> e termina com <strong>ta_bao</strong> — porque quando o mineiro fala
+                    "tá bão", o assunto tá encerrado com dignidade.</span></div>
         </div>
 
     </main>
