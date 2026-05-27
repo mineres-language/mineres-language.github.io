@@ -564,34 +564,78 @@
         <!-- ═══════════════════════════════════
      EXEMPLO DE CÓDIGO
      ═══════════════════════════════════ -->
-        <div class="section-label"><span>💻 exemplo de código</span></div>
+        <div class="section-label"><span>💻 exemplos de código</span></div>
 
         <div class="card full">
             <div class="card-head cafe">
-                <span class="emoji">💻</span> Exemplo — Hello World em Minerês
-                <span class="card-sub">ola_mundo.uai</span>
+                <span class="emoji">💻</span> Exemplos Práticos
+                <span class="card-sub">ola_mundo.uai | fibonacci.uai</span>
             </div>
-            <div class="code-wrap">
-                <div class="code-top">
-                    <div class="dot r"></div>
-                    <div class="dot y"></div>
-                    <div class="dot g"></div>
-                    <span class="code-filename">ola_mundo.uai</span>
-                </div>
-                <pre>
+            
+            <div class="abas-mineres">
+                <button class="aba-btn active" onclick="abrirExemplo(event, 'ola_mundo')">ola_mundo.uai</button>
+                <button class="aba-btn" onclick="abrirExemplo(event, 'fibonacci')">fibonacci.uai</button>
+            </div>
+
+            <div id="ola_mundo" class="aba-conteudo" style="display: block;">
+                <div class="code-wrap" style="border-top-left-radius: 0; border-top-right-radius: 0;">
+                    <div class="code-top">
+                        <div class="dot r"></div>
+                        <div class="dot y"></div>
+                        <div class="dot g"></div>
+                        <span class="code-filename">ola_mundo.uai</span>
+                    </div>
+                    <pre>
 <span class="cc">causo<br>Meu primeiro programa em Minerês, uai!<br>fim_do_causo</span>
 
 <span class="cf">bora_cumpade</span> main()
 <span class="ck">simbora</span>
-    <span class="ct">trem_discrita</span> mensagem <span class="cop">fica_assim_entao</span> <span class="cs">"Uai, mundo!\n"</span> <span class="ck">uai</span>
+    <span class="ct">trem_discrita</span> mensagem <span class="ck">uai</span>
+    mensagem <span class="cop">fica_assim_entao</span> <span class="cs">"Uai, mundo!\n"</span> <span class="ck">uai</span>
     <span class="cf">oia_proce_ve</span>(mensagem) <span class="ck">uai</span>
-    <span class="cf">ta_bao</span> <span class="cn">0</span> <span class="ck">uai</span>
 <span class="ck">cabo</span>
 </pre>
+                </div>
             </div>
-            <div class="lore"><span class="lore-icon">🧀</span><span>Todo programa Minerês começa com
-                    <strong>bora_cumpade</strong> e termina com <strong>ta_bao</strong> — porque quando o mineiro fala
-                    "tá bão", o assunto tá encerrado com dignidade.</span></div>
+
+            <div id="fibonacci" class="aba-conteudo" style="display: none;">
+                <div class="code-wrap" style="border-top-left-radius: 0; border-top-right-radius: 0;">
+                    <div class="code-top">
+                        <div class="dot r"></div>
+                        <div class="dot y"></div>
+                        <div class="dot g"></div>
+                        <span class="code-filename">fibonacci.uai</span>
+                    </div>
+                    <pre>
+<span class="cc">// Sequência de Fibonacci</span>
+<span class="cf">bora_cumpade</span> main()
+<span class="ck">simbora</span>
+    <span class="ct">trem_di_numeru</span> n, a, b, prox, i <span class="ck">uai</span>
+    
+    <span class="cf">oia_proce_ve</span>(<span class="cs">"Digite N:"</span>) <span class="ck">uai</span>
+    <span class="cf">xove</span>(<span class="ct">trem_di_numeru</span>, n) <span class="ck">uai</span>
+    
+    a <span class="cop">fica_assim_entao</span> <span class="cn">0</span> <span class="ck">uai</span>
+    b <span class="cop">fica_assim_entao</span> <span class="cn">1</span> <span class="ck">uai</span>
+    
+    <span class="ck">roda_esse_trem</span> (i <span class="cop">fica_assim_entao</span> <span class="cn">1</span> ; i &lt;= n ; i <span class="cop">fica_assim_entao</span> i + <span class="cn">1</span>)
+    <span class="ck">simbora</span>
+        prox <span class="cop">fica_assim_entao</span> a + b <span class="ck">uai</span>
+        a <span class="cop">fica_assim_entao</span> b <span class="ck">uai</span>
+        b <span class="cop">fica_assim_entao</span> prox <span class="ck">uai</span>
+    <span class="ck">cabo</span>
+    
+    <span class="cf">oia_proce_ve</span>(<span class="cs">"Enésimo termo:"</span>) <span class="ck">uai</span>
+    <span class="cf">oia_proce_ve</span>(a) <span class="ck">uai</span>
+<span class="ck">cabo</span>
+</pre>
+                </div>
+            </div>
+
+            <div class="lore">
+                <span class="lore-icon">🧀</span>
+                <span>Todo programa Minerês começa com <strong>bora_cumpade</strong> e termina com <strong>cabo</strong>. E não vai esquecer do <strong>uai</strong> no final de cada instrução!</span>
+            </div>
         </div>
 
     </main>
@@ -605,4 +649,27 @@
 
 </body>
 
+</html>
+
+</main>
+    <script>
+        function abrirExemplo(evt, nomeExemplo) {
+            // Esconde todo o conteúdo das abas
+            let conteudos = document.getElementsByClassName("aba-conteudo");
+            for (let i = 0; i < conteudos.length; i++) {
+                conteudos[i].style.display = "none";
+            }
+
+            // Remove a classe "active" de todos os botões
+            let botoes = document.getElementsByClassName("aba-btn");
+            for (let i = 0; i < botoes.length; i++) {
+                botoes[i].className = botoes[i].className.replace(" active", "");
+            }
+
+            // Mostra a aba atual e adiciona a classe "active" no botão clicado
+            document.getElementById(nomeExemplo).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
 </html>

@@ -287,6 +287,48 @@ tr:hover td {
     opacity: 0.4;
 }
 
+/* ── ABAS DE CÓDIGO ── */
+.abas-mineres {
+    display: flex;
+    background-color: #2a2118;
+    padding: 0.5rem 1rem 0 1rem;
+    gap: 0.5rem;
+}
+
+.aba-btn {
+    background-color: transparent;
+    color: #a09385;
+    border: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.aba-btn:hover {
+    color: #f0e6cc;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.aba-btn.active {
+    color: #f0e6cc;
+    background-color: #1a120a;
+    border-bottom: 2px solid var(--cafe);
+}
+
+.aba-conteudo {
+    animation: fadeEffect 0.3s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* ── CODE BLOCK ── */
 .code-wrap {
     background: #1a120a;
