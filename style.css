@@ -435,3 +435,22 @@ footer strong {
         font-size: 3.2rem;
     }
 }
+
+/* ── BOTÃO DE COPIAR ── */
+.copy-btn {
+    margin-left: auto;
+    background: rgba(245, 200, 66, 0.15);
+    border: 1px solid rgba(245, 200, 66, 0.35);
+    color: var(--queijo);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--queijo);
+    color: var(--cafe);
+}

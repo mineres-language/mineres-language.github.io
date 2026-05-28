@@ -545,17 +545,6 @@
                     <td>Necessária para executar arquivos <code>.uai</code> diretamente no VS Code</td>
                 </tr>
             </table>
-            <!-- <div style="padding:1rem 1.2rem;background:var(--creme2);border-top:1px solid #ddd0b5;">
-                <p style="font-size:0.82rem;color:var(--cafe-medio);margin-bottom:0.6rem;font-weight:600;">Instalação
-                    rápida via Quick Open <code
-                        style="background:rgba(0,0,0,0.06);padding:0.1rem 0.4rem;border-radius:3px;">Ctrl+P</code></p>
-                <div style="display:flex;flex-direction:column;gap:0.5rem;">
-                    <code
-                        style="font-family:'Fira Code',monospace;font-size:0.8rem;background:#1a120a;color:#f0e6cc;padding:0.5rem 1rem;border-radius:3px;display:block;">ext install grupo-mineres.mineres</code>
-                    <code
-                        style="font-family:'Fira Code',monospace;font-size:0.8rem;background:#1a120a;color:#f0e6cc;padding:0.5rem 1rem;border-radius:3px;display:block;">ext install formulahendry.code-runner</code>
-                </div>
-            </div> -->
             <div class="lore"><span class="lore-icon">☕</span><span>Instale as duas extensões, crie um arquivo
                     <strong>.uai</strong> e clique em <strong>Run Code</strong> — o transpilador faz o resto. Bora
                     cumpade!</span></div>
@@ -584,6 +573,8 @@
                         <div class="dot y"></div>
                         <div class="dot g"></div>
                         <span class="code-filename">ola_mundo.uai</span>
+
+                        <button class="copy-btn" onclick="copiarCodigo(this)">📋 Copiar trem</button>
                     </div>
                     <pre>
 <span class="cc">causo<br>Meu primeiro programa em Minerês, uai!<br>fim_do_causo</span>
@@ -605,6 +596,8 @@
                         <div class="dot y"></div>
                         <div class="dot g"></div>
                         <span class="code-filename">fibonacci.uai</span>
+
+                        <button class="copy-btn" onclick="copiarCodigo(this)">📋 Copiar trem</button>
                     </div>
                     <pre>
 <span class="cc">// Sequência de Fibonacci</span>
@@ -647,29 +640,7 @@
         <p style="margin-top:0.4rem;opacity:0.4">uai, sô — que linguagem bão dimais essa</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
-</html>
-
-</main>
-    <script>
-        function abrirExemplo(evt, nomeExemplo) {
-            // Esconde todo o conteúdo das abas
-            let conteudos = document.getElementsByClassName("aba-conteudo");
-            for (let i = 0; i < conteudos.length; i++) {
-                conteudos[i].style.display = "none";
-            }
-
-            // Remove a classe "active" de todos os botões
-            let botoes = document.getElementsByClassName("aba-btn");
-            for (let i = 0; i < botoes.length; i++) {
-                botoes[i].className = botoes[i].className.replace(" active", "");
-            }
-
-            // Mostra a aba atual e adiciona a classe "active" no botão clicado
-            document.getElementById(nomeExemplo).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
-</body>
 </html>
