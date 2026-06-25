@@ -1,3 +1,29 @@
+// ── QUICK NAV: destaca o link da seção visível ──
+(function () {
+    const secoes = ['controle', 'tipos', 'vscode', 'playground', 'comunidade'];
+    const links = {};
+
+    document.addEventListener('DOMContentLoaded', () => {
+        secoes.forEach(id => {
+            links[id] = document.querySelector(`.quick-nav-link[href="#${id}"]`);
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                if (links[id]) {
+                    links[id].classList.toggle('ativo', entry.isIntersecting);
+                }
+            });
+        }, { rootMargin: '-20% 0px -75% 0px' });
+
+        secoes.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+    });
+})();
+
 // Função para lidar com as abas de exemplo de código
 function abrirExemplo(evt, nomeExemplo) {
     let conteudos = document.getElementsByClassName("aba-conteudo");

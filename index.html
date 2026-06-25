@@ -26,12 +26,20 @@
         </div>
     </header>
 
+    <nav class="quick-nav" id="quick-nav">
+        <a href="#controle" class="quick-nav-link">☕ Controle &amp; Fluxo</a>
+        <a href="#tipos" class="quick-nav-link">🧀 Tipos &amp; Operadores</a>
+        <a href="#vscode" class="quick-nav-link">🧩 VS Code</a>
+        <a href="#playground" class="quick-nav-link">▶ Playground</a>
+        <a href="#comunidade" class="quick-nav-link">🌐 Comunidade</a>
+    </nav>
+
     <main>
 
         <!-- ═══════════════════════════════════
      ESTRUTURAS DE CONTROLE & FLUXO
      ═══════════════════════════════════ -->
-        <div class="section-label"><span>☕ estruturas de controle &amp; fluxo</span></div>
+        <div class="section-label" id="controle"><span>☕ estruturas de controle &amp; fluxo</span></div>
 
         <!-- CONDICIONAL -->
         <div class="card">
@@ -201,7 +209,7 @@
         <!-- ═══════════════════════════════════
      TIPOS, OPERADORES & SINTAXE
      ═══════════════════════════════════ -->
-        <div class="section-label"><span>🧀 tipos, operadores &amp; sintaxe</span></div>
+        <div class="section-label" id="tipos"><span>🧀 tipos, operadores &amp; sintaxe</span></div>
 
         <!-- TIPOS -->
         <div class="card" style="display:flex; flex-direction:column;">
@@ -504,7 +512,7 @@
         <!-- ═══════════════════════════════════
      EXTENSÕES VS CODE
      ═══════════════════════════════════ -->
-        <div class="section-label"><span>🧩 extensão para vs code</span></div>
+        <div class="section-label" id="vscode"><span>🧩 extensão para vs code</span></div>
 
         <div class="card full">
             <div class="card-head capim">
@@ -622,7 +630,7 @@
         <!-- ═══════════════════════════════════
      PLAYGROUND
      ═══════════════════════════════════ -->
-        <div class="section-label"><span>▶ testa o trem!</span></div>
+        <div class="section-label" id="playground"><span>▶ testa o trem!</span></div>
 
         <div class="card full">
             <div class="card-head capim">
@@ -692,6 +700,56 @@ cabo</textarea>
             <div class="lore lore-aviso">
                 <span class="lore-icon">⚠️</span>
                 <span>A execução pelo navegador é experimental e pode apresentar comportamentos inesperados. Para a experiência completa e estável, recomendamos usar a <a href="https://marketplace.visualstudio.com/items?itemName=grupo-mineres.mineres" target="_blank" rel="noopener" class="lore-link">extensão oficial do Minerês no VS Code</a>.</span>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════
+             COMUNIDADE
+             ═══════════════════════════════════ -->
+        <div class="section-label" id="comunidade"><span>🌐 comunidade</span></div>
+
+        <!-- GITHUB ORG -->
+        <div class="card">
+            <div class="card-head capim">
+                <span class="emoji">🐙</span> Organização no GitHub
+                <span class="card-sub">mineres-language</span>
+            </div>
+            <div class="github-content">
+                <p class="github-desc">Acompanhe o desenvolvimento, explore o código-fonte, abra issues e contribua com o projeto Minerês.</p>
+                <a href="https://github.com/mineres-language" target="_blank" rel="noopener" class="github-org-row">
+                    <span class="github-org-icon">🐙</span>
+                    <div class="github-org-info">
+                        <div class="github-org-name">github.com/mineres-language</div>
+                        <div class="github-org-sub">repositórios · issues · contribuições</div>
+                    </div>
+                    <span class="github-org-arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- BUG REPORT -->
+        <div class="card">
+            <div class="card-head vermelho">
+                <span class="emoji">🐛</span> Encontrou um problema?
+                <span class="card-sub">suporte &amp; bugs</span>
+            </div>
+            <div class="bug-steps">
+                <div class="bug-step">
+                    <span class="bug-step-num">1</span>
+                    <div class="bug-step-body">
+                        <strong>Teste na extensão do VS Code</strong>
+                        <p>O playground roda via WebAssembly e é experimental — pode ter comportamentos inesperados. Antes de reportar, tente reproduzir o problema na <a href="https://marketplace.visualstudio.com/items?itemName=grupo-mineres.mineres" target="_blank" rel="noopener" class="bug-inline-link">extensão oficial</a>.</p>
+                    </div>
+                </div>
+                <div class="bug-divider"></div>
+                <div class="bug-step">
+                    <span class="bug-step-num">2</span>
+                    <div class="bug-step-body">
+                        <strong>Se o problema persistir, abra uma issue</strong>
+                        <p>Descreva o comportamento esperado, o que aconteceu e o código usado. Quanto mais detalhe, mais rápido a gente resolve, uai.</p>
+                        <a href="https://github.com/mineres-language" target="_blank" rel="noopener" class="bug-report-btn">📋 Abrir issue no GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
 
