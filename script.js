@@ -182,6 +182,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const editor = document.getElementById('playground-editor');
     if (!editor) return;
 
+    // Garante que apenas o Terminal está visível no carregamento
+    mudarAbaOutput('terminal');
+
     sincronizarHighlight();
 
     editor.addEventListener('input', sincronizarHighlight);
@@ -282,9 +285,12 @@ async function executarCodigo() {
     output.className = 'playground-output';
     output.innerHTML = '';
 
-    // Reseta estado do terminal a cada execução
+    // Reseta estado do terminal e abas a cada execução
     _terminalShownLen = 0;
     _terminalChunks   = [];
+    document.getElementById('output-saida-uai').textContent = '';
+    document.getElementById('output-ir').textContent = '';
+    mudarAbaOutput('terminal');
 
     const xoveCount = (codigo.match(/\bxove\b/g) || []).length;
 
@@ -476,6 +482,12 @@ async function _rodarCodigo(codigo, entrada) {
         output.appendChild(outSpan);
         output.scrollTop = output.scrollHeight;
 
+        // Popula abas de saída.uai e IR com syntax highlighting
+        const saidaUai = _lerArquivoFS('/mineres/data/output/saida.uai');
+        const saidaIR  = _lerArquivoFS('/mineres/data/output/saida_ir.uai');
+        if (saidaUai) document.getElementById('output-saida-uai').innerHTML = destacarOutput('// (lexema, código, linha, coluna)\n' + saidaUai);
+        if (saidaIR)  document.getElementById('output-ir').innerHTML = destacarOutput(saidaIR);
+
     } catch (err) {
         output.classList.add('playground-output-error');
         const errSpan = document.createElement('span');
@@ -489,6 +501,91 @@ async function _rodarCodigo(codigo, entrada) {
 
 function definirStatus(msg) {
     document.getElementById('playground-status').textContent = msg;
+}
+
+function mudarAbaOutput(aba) {
+    const ids = { 'terminal': 'playground-output', 'saida-uai': 'output-saida-uai', 'ir': 'output-ir' };
+    Object.values(ids).forEach(id => { document.getElementById(id).style.display = 'none'; });
+    document.getElementById(ids[aba]).style.display = 'block';
+    document.querySelectorAll('.output-tab').forEach(b => b.classList.remove('active'));
+    const btn = document.querySelector(`.output-tab[onclick*="${aba}"]`);
+    if (btn) btn.classList.add('active');
+}
+
+function _lerArquivoFS(caminho) {
+    try { return _pyodide.FS.readFile(caminho, { encoding: 'utf8' }); } catch (_) { return null; }
+}
+
+// Highlighter para saida_ir.uai e saida.uai (formato de listas de tuplas)
+function destacarOutput(src) {
+    const IR_OPS = new Set(['att','call','jmp','jmpif','jmpifnot','ret','push','pop','add','sub','mul','div','mod','eq','neq','lt','lte','gt','gte','and','or','not','print','scan','label']);
+    const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+    let html = '';
+    let i = 0;
+    const n = src.length;
+    // controla se estamos no primeiro elemento de uma tupla (opcode no IR)
+    let posNaTupla = -1;
+
+    while (i < n) {
+        // Comentário de linha //
+        if (src[i] === '/' && src[i+1] === '/') {
+            let j = i;
+            while (j < n && src[j] !== '\n') j++;
+            html += `<span class="oc-comment">${esc(src.slice(i, j))}</span>`;
+            i = j; continue;
+        }
+
+        // String "..."
+        if (src[i] === '"') {
+            let j = i + 1;
+            while (j < n && src[j] !== '"') { if (src[j] === '\\') j++; j++; }
+            if (j < n) j++;
+            const val = src.slice(i + 1, j - 1);
+            const cls = (posNaTupla === 0 && IR_OPS.has(val)) ? 'oc-op' : 'oc-str';
+            html += `<span class="${cls}">${esc(src.slice(i, j))}</span>`;
+            if (posNaTupla === 0) posNaTupla = 1;
+            i = j; continue;
+        }
+
+        // @variável
+        if (src[i] === '@') {
+            let j = i + 1;
+            while (j < n && /[a-zA-Z0-9_]/.test(src[j])) j++;
+            html += `<span class="oc-ref">${esc(src.slice(i, j))}</span>`;
+            i = j; continue;
+        }
+
+        // Número (incluindo negativos)
+        if (/[0-9]/.test(src[i]) || (src[i] === '-' && /[0-9]/.test(src[i+1]))) {
+            let j = i + (src[i] === '-' ? 1 : 0);
+            while (j < n && /[0-9.]/.test(src[j])) j++;
+            html += `<span class="oc-num">${esc(src.slice(i, j))}</span>`;
+            i = j; continue;
+        }
+
+        // Identificador (null, true, false ou nome)
+        if (/[a-zA-Z_]/.test(src[i])) {
+            let j = i;
+            while (j < n && /[a-zA-Z0-9_]/.test(src[j])) j++;
+            const word = src.slice(i, j);
+            if (word === 'null' || word === 'true' || word === 'false') {
+                html += `<span class="oc-null">${esc(word)}</span>`;
+            } else {
+                html += `<span class="oc-ref">${esc(word)}</span>`;
+            }
+            i = j; continue;
+        }
+
+        // Pontuação — rastreia posição dentro da tupla
+        if (src[i] === '(') { posNaTupla = 0; html += `<span class="oc-punc">${esc(src[i])}</span>`; i++; continue; }
+        if (src[i] === ')') { posNaTupla = -1; html += `<span class="oc-punc">${esc(src[i])}</span>`; i++; continue; }
+        if (src[i] === ',') { if (posNaTupla >= 0) posNaTupla++; html += `<span class="oc-punc">${esc(src[i])}</span>`; i++; continue; }
+        if (src[i] === '[' || src[i] === ']') { html += `<span class="oc-punc">${esc(src[i])}</span>`; i++; continue; }
+
+        html += esc(src[i]); i++;
+    }
+    return html;
 }
 
 function copiarCodigoPlayground(btn) {

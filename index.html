@@ -674,8 +674,14 @@ cabo</textarea>
                 </div>
 
                 <div class="playground-col-output">
-                    <div class="playground-output-header">Saída:</div>
-                    <div id="playground-output" class="playground-output">// execute o código para ver a saída aqui, uai...</div>
+                    <div class="output-tab-bar">
+                        <button class="output-tab active" onclick="mudarAbaOutput('terminal')">Terminal</button>
+                        <button class="output-tab" onclick="mudarAbaOutput('saida-uai')">saída.uai</button>
+                        <button class="output-tab" onclick="mudarAbaOutput('ir')">IR</button>
+                    </div>
+                    <div id="playground-output"  class="playground-output">// execute o código para ver a saída aqui, uai...</div>
+                    <div id="output-saida-uai"   class="playground-output" style="display:none"></div>
+                    <div id="output-ir"          class="playground-output" style="display:none"></div>
                 </div>
             </div>
 

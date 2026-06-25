@@ -709,17 +709,36 @@ footer strong {
     font-style: italic;
 }
 
-.playground-output-header {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.68rem;
-    color: var(--pg-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.55rem 1.2rem;
+.output-tab-bar {
+    display: flex;
     background: var(--pg-bg-bar);
     border-bottom: 1px solid var(--pg-border);
     flex-shrink: 0;
 }
+
+.output-tab {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--pg-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-bottom: -1px;
+}
+
+.output-tab:hover {
+    color: var(--pg-text);
+}
+
+.output-tab.active {
+    color: var(--pg-text);
+    border-bottom-color: var(--pg-hl-kw);
+}
+
 
 .playground-output {
     flex: 1;
@@ -738,6 +757,15 @@ footer strong {
 .playground-output.playground-output-error {
     color: #ff7b7b;
 }
+
+/* ── HIGHLIGHT DAS ABAS saída.uai / IR ── */
+.oc-comment { color: var(--pg-muted); font-style: italic; }
+.oc-op   { color: var(--pg-hl-kw);  font-weight: 600; }
+.oc-str  { color: var(--pg-hl-str); }
+.oc-ref  { color: var(--pg-hl-fn);  }
+.oc-num  { color: var(--pg-hl-num); }
+.oc-null { color: var(--pg-muted);  font-style: italic; }
+.oc-punc { color: var(--pg-muted);  }
 
 /* ── SCROLLBAR DO PLAYGROUND ── */
 .playground-editor,
