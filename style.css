@@ -260,6 +260,24 @@ tr:hover td {
     margin-top: -0.1rem;
 }
 
+.lore.lore-aviso {
+    background: rgba(180, 100, 20, 0.1);
+    border-top: 2px solid rgba(180, 100, 20, 0.3);
+    color: var(--cafe);
+    opacity: 0.85;
+}
+
+.lore-link {
+    color: var(--cafe);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.lore-link:hover {
+    color: var(--capim);
+}
+
 .section-label {
     grid-column: 1 / -1;
     display: flex;
@@ -422,6 +440,361 @@ footer strong {
     color: var(--queijo);
 }
 
+/* ── PLAYGROUND ── */
+.playground-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--creme2);
+    border-bottom: 1px solid #ddd0b5;
+    flex-wrap: wrap;
+}
+
+.playground-toolbar-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--cafe-medio);
+    letter-spacing: 0.05em;
+    margin-right: 0.2rem;
+}
+
+.playground-exemplo-btn {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.78rem;
+    background: transparent;
+    border: 1px solid rgba(58, 107, 53, 0.4);
+    color: var(--capim);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.playground-exemplo-btn:hover {
+    background: var(--capim);
+    color: var(--branco);
+    border-color: var(--capim);
+}
+
+/* Variáveis de tema do playground — escuro por padrão, claro via .claro */
+.playground-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 560px;
+
+    --pg-bg:        #1a120a;
+    --pg-bg-bar:    #120c05;
+    --pg-border:    #3a2510;
+    --pg-text:      #f0e6cc;
+    --pg-muted:     #7a6248;
+    --pg-caret:     #f0e6cc;
+    --pg-selection: rgba(109, 171, 94, 0.35);
+    --pg-sb-track:  #120c05;
+    --pg-sb-thumb:  rgba(245, 200, 66, 0.35);
+    --pg-sb-hover:  rgba(245, 200, 66, 0.7);
+    --pg-sb-color:  rgba(245, 200, 66, 0.35);
+
+    --pg-hl-kw:  #6dab5e;
+    --pg-hl-ct:  #f5c842;
+    --pg-hl-str: #e07b39;
+    --pg-hl-num: #87ceeb;
+    --pg-hl-cc:  #5a4535;
+    --pg-hl-fn:  #c77dff;
+    --pg-hl-op:  #e9c46a;
+}
+
+.playground-body.claro {
+    --pg-bg:        var(--creme);
+    --pg-bg-bar:    var(--creme2);
+    --pg-border:    #ddd0b5;
+    --pg-text:      var(--cafe);
+    --pg-muted:     var(--cafe-medio);
+    --pg-caret:     var(--cafe);
+    --pg-selection: rgba(58, 107, 53, 0.2);
+    --pg-sb-track:  var(--creme2);
+    --pg-sb-thumb:  rgba(44, 26, 14, 0.25);
+    --pg-sb-hover:  rgba(44, 26, 14, 0.5);
+    --pg-sb-color:  rgba(44, 26, 14, 0.3);
+
+    --pg-hl-kw:  #2d5a28;
+    --pg-hl-ct:  #a06d00;
+    --pg-hl-str: #c25a10;
+    --pg-hl-num: #1a5c8c;
+    --pg-hl-cc:  #7a5838;
+    --pg-hl-fn:  #6b35a0;
+    --pg-hl-op:  #8a6a00;
+}
+
+.playground-col-editor {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid var(--cafe);
+    min-height: 0;
+    overflow: hidden;
+}
+
+.playground-col-output {
+    display: flex;
+    flex-direction: column;
+    background: var(--pg-bg);
+    min-height: 0;
+    overflow: hidden;
+}
+
+.playground-code-wrap {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.playground-code-wrap .code-top {
+    background: var(--pg-bg-bar);
+    border-bottom: 1px solid var(--pg-border);
+    flex-shrink: 0;
+}
+
+.editor-code-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.line-numbers {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.83rem;
+    line-height: 2;
+    padding: 1.2rem 0.75rem 1.2rem 0.6rem;
+    color: var(--pg-muted);
+    text-align: right;
+    user-select: none;
+    overflow: hidden;
+    white-space: pre;
+    background: var(--pg-bg-bar);
+    border-right: 1px solid var(--pg-border);
+    flex-shrink: 0;
+    min-width: 2.2rem;
+}
+
+.editor-wrapper {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.editor-highlight,
+.playground-editor {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.83rem;
+    line-height: 2;
+    padding: 1.2rem 1.8rem;
+    tab-size: 4;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
+    border: none;
+}
+
+.editor-highlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    color: var(--pg-text);
+    background: var(--pg-bg);
+}
+
+/* Sintaxe — escopada ao #editor-highlight para não afetar os exemplos estáticos */
+#editor-highlight .ck  { color: var(--pg-hl-kw);  font-weight: 600; }
+#editor-highlight .ct  { color: var(--pg-hl-ct);  }
+#editor-highlight .cs  { color: var(--pg-hl-str); }
+#editor-highlight .cn  { color: var(--pg-hl-num); }
+#editor-highlight .cc  { color: var(--pg-hl-cc);  font-style: italic; }
+#editor-highlight .cf  { color: var(--pg-hl-fn);  font-weight: 600; }
+#editor-highlight .cop { color: var(--pg-hl-op);  }
+
+.playground-editor {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    caret-color: var(--pg-caret);
+    outline: none;
+    resize: none;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.playground-editor::selection {
+    background: var(--pg-selection);
+}
+
+/* ── TERMINAL INTERATIVO ── */
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    line-height: 2;
+}
+
+.terminal-prompt {
+    color: var(--pg-hl-kw);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.terminal-echo {
+    color: var(--pg-text);
+    opacity: 0.75;
+    white-space: pre;
+}
+
+.terminal-inline-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--pg-text);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.83rem;
+    line-height: 2;
+    caret-color: var(--pg-caret);
+    padding: 0;
+}
+
+.playground-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--pg-bg-bar);
+    border-top: 1px solid var(--pg-border);
+    flex-shrink: 0;
+}
+
+.executar-btn {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--capim);
+    color: var(--branco);
+    border: none;
+    padding: 0.45rem 1.3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.04em;
+}
+
+.executar-btn:hover:not(:disabled) {
+    background: var(--capim-claro);
+}
+
+.executar-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.playground-status {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: var(--pg-muted);
+    font-style: italic;
+}
+
+.playground-output-header {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.68rem;
+    color: var(--pg-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.55rem 1.2rem;
+    background: var(--pg-bg-bar);
+    border-bottom: 1px solid var(--pg-border);
+    flex-shrink: 0;
+}
+
+.playground-output {
+    flex: 1;
+    min-height: 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.83rem;
+    line-height: 1.8;
+    color: var(--pg-text);
+    padding: 1.2rem 1.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-y: auto;
+    background: var(--pg-bg);
+}
+
+.playground-output.playground-output-error {
+    color: #ff7b7b;
+}
+
+/* ── SCROLLBAR DO PLAYGROUND ── */
+.playground-editor,
+.playground-output {
+    scrollbar-width: thin;
+    scrollbar-color: var(--pg-sb-color) var(--pg-sb-track);
+}
+
+.playground-editor::-webkit-scrollbar,
+.playground-output::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.playground-editor::-webkit-scrollbar-track,
+.playground-output::-webkit-scrollbar-track {
+    background: var(--pg-sb-track);
+    border-radius: 99px;
+}
+
+.playground-editor::-webkit-scrollbar-thumb,
+.playground-output::-webkit-scrollbar-thumb {
+    background: var(--pg-sb-thumb);
+    border-radius: 99px;
+    transition: background 0.2s ease;
+}
+
+.playground-editor::-webkit-scrollbar-thumb:hover,
+.playground-output::-webkit-scrollbar-thumb:hover {
+    background: var(--pg-sb-hover);
+}
+
+.playground-editor::-webkit-scrollbar-corner,
+.playground-output::-webkit-scrollbar-corner {
+    background: var(--pg-sb-track);
+}
+
+/* ── BOTÃO DE TEMA ── */
+.playground-tema-btn {
+    margin-left: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    background: transparent;
+    border: 1px solid rgba(58, 107, 53, 0.4);
+    color: var(--capim);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.playground-tema-btn:hover {
+    background: var(--capim);
+    color: var(--branco);
+    border-color: var(--capim);
+}
+
 @media(max-width:820px) {
     main {
         grid-template-columns: 1fr;
@@ -433,6 +806,15 @@ footer strong {
 
     h1 {
         font-size: 3.2rem;
+    }
+
+    .playground-body {
+        grid-template-columns: 1fr;
+    }
+
+    .playground-col-editor {
+        border-right: none;
+        border-bottom: 2px solid var(--cafe);
     }
 }
 
